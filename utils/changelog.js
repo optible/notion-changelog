@@ -1,5 +1,5 @@
 const core = require('@actions/core')
-var jiraHost = core.getInput('jiraHost') || process.env.JIRA_HOST || Cypress.env('TEST_JIRA_HOST')
+var notionWorkspace = core.getInput('notionWorkspace') || process.env.JIRA_HOST || Cypress.env('TEST_JIRA_HOST')
 
 /**
  * Strips referenced jira tickets that are already surrounded by brackets.
@@ -92,7 +92,7 @@ function addJiraLinksToChangelog(changelog) {
 
   try {
     const regex = /([A-Z][A-Z0-9]+-\d+)/g
-    revisedChangelog = changelog.replace(regex, `[\`$1\`](https://${jiraHost}/browse/$1)`)
+    revisedChangelog = changelog.replace(regex, `[\`$1\`](https://notion.so/${notionWorkspace}/tasks/$1)`)
   } catch (error) {
     console.log(error)
     core.setFailed(error.message)
