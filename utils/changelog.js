@@ -1,6 +1,5 @@
 const core = require('@actions/core')
-var notionWorkspace = core.getInput('notionWorkspace') || process.env.JIRA_HOST || Cypress.env('TEST_JIRA_HOST')
-
+var notionWorkspace = core.getInput('notionWorkspace') || process.env.JIRA_HOST
 /**
  * Strips referenced jira tickets that are already surrounded by brackets.
  * Assumes tickets are uppercase.
