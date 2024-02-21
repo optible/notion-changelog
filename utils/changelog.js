@@ -91,7 +91,7 @@ function addJiraLinksToChangelog(changelog) {
 
   try {
     const regex = /([A-Z][A-Z0-9]+-\d+)/g
-    revisedChangelog = changelog.replace(regex, `[\`$1\`](https://notion.so/${notionWorkspace}/tasks/$1)`)
+    revisedChangelog = changelog.replace(regex, `[\`$1\`](https://notion.so/${notionWorkspace}/$1)`)
   } catch (error) {
     console.log(error)
     core.setFailed(error.message)

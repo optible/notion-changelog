@@ -1,5 +1,3 @@
-node_modules
-.env
-cypress/screenshots
-cypress/videos
-cypress/downloads
+# orb.yml is "packed" from source, and not published directly from the repository.
+orb.yml
+.DS_Store
