@@ -40,8 +40,8 @@ workflows:
       - orb-tools/pack:
           filters: *release-filters
       - orb-tools/publish:
-          orb_name: <namespace>/<orb-name>
-          vcs_type: << pipeline.project.type >>
+          orb_name: optible/notion-changelog
+          vcs_type: github
           pub_type: production
           # Ensure this job requires all test jobs and the pack job.
           requires:
