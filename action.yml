@@ -1,34 +1,34 @@
-name: 'Jirafy Changelog'
-description: 'Generates a changelog from two references, where the markdown is formatted for any referenced Jira stories.'
+name: "Jirafy Changelog"
+description: "Generates a changelog from two references, where the markdown is formatted for any referenced Jira stories."
 
 inputs:
   githubToken:
-    description: 'Your GITHUB_TOKEN'
-    default: ''
+    description: "Your GITHUB_TOKEN"
+    default: ""
     required: true
   head-ref:
-    description: 'The name of the head reference'
-    default: ''
+    description: "The name of the head reference"
+    default: ""
     required: false
   base-ref:
-    description: 'The name of the base reference'
-    default: ''
+    description: "The name of the base reference"
+    default: ""
     required: false
-  jiraHost:
-    description: 'Jira host name (i.e company.atlassian.net)'
+  notionWorkspace:
+    description: "Jira host name (i.e company.atlassian.net)"
     required: true
   changelog:
-    description: 'changelog to use instead of generating one'
+    description: "changelog to use instead of generating one"
     required: false
 
 outputs:
   changelog:
-    description: 'Markdown formatted changelog'
+    description: "Markdown formatted changelog"
 
 branding:
-  icon: 'bell'
-  color: 'blue'
+  icon: "bell"
+  color: "blue"
 
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"

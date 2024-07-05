@@ -5,7 +5,7 @@
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const core = __nccwpck_require__(838)
-var notionWorkspace = core.getInput('notionWorkspace') || process.env.JIRA_HOST
+const notionWorkspace = core.getInput('notionWorkspace') || process.env.JIRA_HOST
 /**
  * Strips referenced jira tickets that are already surrounded by brackets.
  * Assumes tickets are uppercase.
@@ -37,7 +37,7 @@ function toUpperJiraTickets(changelog) {
 
   try {
     const regex = /([a-zA-Z][a-zA-Z0-9]+-\d+)/g
-    revisedChangelog = changelog.replace(regex, (p1) => p1.toUpperCase())
+    revisedChangelog = changelog.replace(regex, p1 => p1.toUpperCase())
   } catch (error) {
     console.log(error)
     core.setFailed(error.message)
@@ -125,7 +125,7 @@ module.exports = {
   toUpperJiraTickets,
   stripBrackets,
   addCommaSpaceBetweenJiraTickets,
-  surroundTicketListWithBrackets,
+  surroundTicketListWithBrackets
 }
 
 
