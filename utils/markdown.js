@@ -21,7 +21,7 @@ class Markdown {
     return new Promise((good, bad) => {
       markdownpdf()
         .from.string(this.markdown)
-        .to(filepath, (error) => {
+        .to(filepath, error => {
           if (error) {
             bad(error)
           } else {
