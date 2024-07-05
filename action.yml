@@ -17,6 +17,9 @@ inputs:
   jiraHost:
     description: 'Jira host name (i.e company.atlassian.net)'
     required: true
+  changelog:
+    description: 'changelog to use instead of generating one'
+    required: false
 
 outputs:
   changelog:
