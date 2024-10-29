@@ -19,7 +19,7 @@ module.exports = function mailer(apiKey = process.env.SENDGRID_API_KEY) {
       to: params.to.split(','),
       from: params.from || 'deployer@goodcity.hk',
       subject: params.subject || 'Release Notes',
-      html: md.toHTML()
+      html: md.toHTML(),
     }
 
     return sgMail.send(msg)
